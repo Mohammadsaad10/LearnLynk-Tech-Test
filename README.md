@@ -165,3 +165,10 @@ Write **8–12 lines** describing how you would implement a Stripe Checkout flow
 3. Share the link.
 
 Good luck.
+
+## Stripe Integration for Application fee.
+I would implement a application fee payment flow using Stripe Webhooks to ensure data consistency. First, my backend would create a `Stripe Checkout Session`, embedding the critical `application_id` in the session's `metadata` object, and simultaneously insert a 'pending' record into a `payment_requests` table to track the attempt.
+
+Instead of relying on the client-side success URL (which can be closed early), I would configure a webhook endpoint listening for `checkout.session.completed`. Upon verifying the Stripe signature to prevent spoofing, I would extract the `application_id` from the metadata and use the Supabase service role to execute a transaction: updating the payment record to 'paid', advancing the application stage to 'submitted', and appending a confirmation event to the timeline.
+
+Thank You!
