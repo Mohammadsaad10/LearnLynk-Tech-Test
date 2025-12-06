@@ -1,0 +1,30 @@
+# Node dependencies (Next.js frontend)
+frontend/node_modules
+
+# Next.js build output
+frontend/.next
+frontend/out
+
+# Supabase generated folder (if any)
+backend/functions/node_modules
+backend/.supabase
+
+# Mac system file
+.DS_Store
+
+# Environment variables
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+backend/.env
+
+frontend/next-env.d.ts
+frontend/next.config.mjs
+
+.vscode/
+
+backend/.vscode/
+backend/edge-functions/
+backend/supabase/.temp/
+backend/supabase/config.toml
+backend/node_modules/
