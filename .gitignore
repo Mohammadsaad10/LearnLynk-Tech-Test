@@ -24,7 +24,7 @@ frontend/next.config.mjs
 .vscode/
 
 backend/.vscode/
-backend/edge-functions/
+backend/edge-functions/create-task
 backend/supabase/.temp/
 backend/supabase/config.toml
 backend/node_modules/
