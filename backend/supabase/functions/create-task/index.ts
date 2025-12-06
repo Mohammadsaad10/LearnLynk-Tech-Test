@@ -1,8 +1,5 @@
 // LearnLynk Tech Test - Task 3: Edge Function create-task
 
-// Deno + Supabase Edge Functions style
-// Docs reference: https://supabase.com/docs/guides/functions
-
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
 
@@ -52,7 +49,7 @@ serve(async (req: Request) => {
       });
     }
 
-    // Validate Due Date (Must be in future) [cite: 53]
+    // Validate Due Date 
     const dueDate = new Date(due_at);
     const now = new Date();
     if (isNaN(dueDate.getTime()) || dueDate <= now) {
@@ -88,11 +85,11 @@ serve(async (req: Request) => {
     const { data: taskData, error: taskError } = await supabase
       .from("tasks")
       .insert({
-        tenant_id: tenantId,        // The missing link!
+        tenant_id: tenantId,        
         related_id: application_id, // Mapped to 'related_id' as per schema
         type: task_type,
         due_at: due_at,
-        title: `${task_type} task for application`, // Basic default title
+        title: `${task_type} task for application`, 
         status: 'open'
       })
       .select()
