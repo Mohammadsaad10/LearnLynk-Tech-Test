@@ -77,7 +77,11 @@ export default function TodayDashboard() {
 
       if (error) throw error;
       
+<<<<<<< HEAD
       //  Re-fetch to ensure sync
+=======
+      // Re-fetch to ensure sync 
+>>>>>>> 91261e7c6393dfa916252cb2d0aa9e1ead936874
       fetchTasks();
     } catch (err: any) {
       console.error(err);
