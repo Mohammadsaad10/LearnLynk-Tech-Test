@@ -77,7 +77,7 @@ export default function TodayDashboard() {
 
       if (error) throw error;
       
-      // Optional: Re-fetch to ensure sync (disabled here to rely on optimistic update)
+      //  Re-fetch to ensure sync
       fetchTasks();
     } catch (err: any) {
       console.error(err);
@@ -103,11 +103,11 @@ export default function TodayDashboard() {
         <table style={{ width: "100%", textAlign: "left", borderCollapse: "collapse" }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #ccc" }}>
-              <th style={{ padding: "8px" }}>Title</th> {/* [cite: 74] */}
+              <th style={{ padding: "8px" }}>Title</th> 
               <th style={{ padding: "8px" }}>Type</th>
-              <th style={{ padding: "8px" }}>App ID</th> {/* [cite: 75] */}
-              <th style={{ padding: "8px" }}>Due At</th> {/* [cite: 76] */}
-              <th style={{ padding: "8px" }}>Status</th> {/* [cite: 77] */}
+              <th style={{ padding: "8px" }}>App ID</th> 
+              <th style={{ padding: "8px" }}>Due At</th> 
+              <th style={{ padding: "8px" }}>Status</th> 
               <th style={{ padding: "8px" }}>Action</th>
             </tr>
           </thead>
